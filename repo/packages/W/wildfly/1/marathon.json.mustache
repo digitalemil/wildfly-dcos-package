@@ -1,0 +1,49 @@
+{
+  "id": "{{wildfly.name}}",
+  "cpus": {{wildfly.cpus}},
+  "mem": 2048,
+  "instances": {{wildfly.instances}},
+  "args": [],
+  "healthChecks": [
+  ],
+  "labels": {
+		"DCOS_SERVICE_SCHEME":"http",
+		"DCOS_SERVICE_NAME":"wildfly",
+		"DCOS_SERVICE_PORT_INDEX":"0"
+	},
+  "portDefinitions": [{
+		"port": 8180,
+		"protocol": "tcp",
+		"name": "wildfly",
+		"labels": {
+			"VIP_0": "/wildfly:80"
+		}
+	}],
+   "requirePorts": true,
+	"container": {
+    "type": "DOCKER",
+    "docker": {
+      "image": "{{wildfly.dockerimage}}",
+ "privileged": false,
+ "forcePullImage": true,
+      "portMappings": null
+    }
+  },
+"fetch": [
+    {
+      "uri": "{{wildfly.war}}"
+    }
+  ],
+  "healthChecks": [
+    {
+      "protocol": "HTTP",
+      "path": "/",
+      "gracePeriodSeconds": {{wildfly.grace}},
+      "intervalSeconds": 5,
+      "timeoutSeconds": 10,
+      "maxConsecutiveFailures": 4,
+      "portIndex": 0,
+      "ignoreHttp1xx": false
+    }
+  ]
+}

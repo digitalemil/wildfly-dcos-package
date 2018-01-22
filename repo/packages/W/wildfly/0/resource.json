@@ -1,0 +1,18 @@
+{
+  "images": {
+    "icon-small": "http://digitalemil.de/wildfly-small.png",
+    "icon-medium": "http://digitalemil.de/wildfly-medium.png",
+    "icon-large": "http://digitalemil.de/wildfly-large.png",
+    "screenshots": [
+    ]
+  },
+  "assets": {
+    "uris": {
+    },
+    "container": {
+      "docker": {
+        "wildfly": "digitalemil/mypublicrepo:wildfly-9.0.2"
+      }
+    }
+  }
+}

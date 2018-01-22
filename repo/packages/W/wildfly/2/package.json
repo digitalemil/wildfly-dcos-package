@@ -1,0 +1,22 @@
+{
+  "packagingVersion": "3.0",
+  "name": "wildfly",
+  "version": "9.2-0.1",
+  "scm": "https://github.com/wildfly/wildfly",
+  "maintainer": "de@digitalemil.de",
+  "website": "https://digitalemil.de",
+  "description": "Wildfly",
+  "tags": [
+    "jboss",
+    "Java",
+    "appserver"
+    ],
+  "preInstallNotes": "This DC/OS Service is currently EXPERIMENTAL. There may be bugs, incomplete features, incorrect documentation, or other discrepancies.",
+  "postInstallNotes": "Service installed.\n\nPlease access the UI through the endpoint created in Marathon-LB.",
+  "licenses": [
+    {
+      "name": "GNU LESSER GENERAL PUBLIC LICENSE",
+      "url": "https://github.com/wildfly/wildfly/blob/master/LICENSE.txt"
+    }
+  ]
+}
